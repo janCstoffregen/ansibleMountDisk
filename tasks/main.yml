@@ -1,0 +1,9 @@
+- name: "Create backup directory"
+  file: path=/home/ubuntu/backup state=directory
+
+- name: "mount device"
+  mount:
+    path: /home/ubuntu/backup
+    src: /dev/vdb
+    fstype: ext4
+    state: mounted
